@@ -1,7 +1,7 @@
 var mongoose=require("mongoose");
 var Schema=mongoose.Schema;
 
-mongoose.connect("mongodb://localhost/service");
+mongoose.connect("mongodb://localhost/serve");
 
 var persona=new Schema({nombre: String,
                         edad: Number,

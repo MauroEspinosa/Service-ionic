@@ -1,13 +1,28 @@
-<html>
+<html ng-app="peticiones">
 <head>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="http://code.angularjs.org/1.3.14/angular-route.min.js"></script>
+  <script type="text/javascript" src="/peticiones.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
-<form action="/nuevo">
-  <input type="text" placeholder="Nombre" name="nombre"/>
-  <input type="number" placeholder="Edad" name="edad"/>
-  <input type="number" placeholder="Numero" name="numero"/>
-  <input type="text" placeholder="Lugar" name="lugar"/>
-  <input type="submit" value="Enviar"/>
+<form ng-controller="formulario" class="form-inline" ng-submit="nuevo()">
+  <div class="form-group">
+      <input type="text" class="form-control" placeholder="Nombre" ng-model="formData.nombre">
+  </div>
+  <div class="form-group">
+      <input type="number" class="form-control" placeholder="Edad" ng-model="formData.edad">
+  </div>
+  <div class="form-group">
+      <input type="number" class="form-control" placeholder="Numero" ng-model="formData.numero">
+  </div>
+  <div class="form-group">
+      <input type="text" class="form-control" placeholder="Lugar" ng-model="formData.lugar">
+  </div>
+
+  <input class="btn btn-info"type="submit" value="Enviar"/>
 </form>
+
+<div ng-view></div>
 </body>
 </html>
